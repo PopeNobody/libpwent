@@ -1,0 +1,10 @@
+I'm doing something a little weird here, which is normal for me.  IF I were
+doing sometihng normal, it would be kind weird.
+
+What I'm looking to do is to integrate some of the Linux tools into a big
+directory ... which is how it once was.  I'm hoping to increate consistency
+between them, and imporive integration, among other things.
+
+Think of it as an experiment.
+
+
