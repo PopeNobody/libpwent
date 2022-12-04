@@ -5,5 +5,15 @@ libdir = ${exec_prefix}/lib
 srcdir = .
 
 AR = ar
+CC = gcc
+CPP = gcc -E
+
 ARFLAGS = cr
 RANLIB = ranlib
+ASFLAGS = 
+CPPFLAGS = 
+
+ofiles = pwent.o
+
+OUTPUT_OPTION = -o $@
+

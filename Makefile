@@ -1,6 +1,6 @@
 MAKEFLAGS= -rR
-
 include Makefile.defs
+
 
 all: libpwent.a
 
@@ -8,14 +8,7 @@ all: libpwent.a
 pwent.i: $(srcdir)/pwent.c $(srcdir)/config.h
 	$(CPP) $< -o $@ -E
 
-pwent.o: pwent.i
-
-libpwent.a: libpwent.a(pwent.o)
-
-(%): %
-	$(AR) $(ARFLAGS) $@ $<
-
-$(libdir)/libpwent.a: $(libdir)
+$(libdir)/libpwent.a: libpwent.a $(libdir)
 	install $< $@
 
 install: $(libdir)/libpwent.a
@@ -23,4 +16,12 @@ install: $(libdir)/libpwent.a
 Makefile.defs config.h: %: %.in
 	./config.status
 
+Makefile.rules.def:
+	env - make -f /dev/null /dev/null -p > $@.new
+	mv $@.new $@
+
+
 .PHONY: all
+
+include Makefile.rules
+

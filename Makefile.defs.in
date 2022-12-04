@@ -5,5 +5,10 @@ libdir = @libdir@
 srcdir = @srcdir@
 
 AR = @AR@
+CC = @CC@
+CPP = @CPP@
+
 ARFLAGS = @ARFLAGS@
 RANLIB = @RANLIB@
+
+COMPILE.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(TARGET_MACH) -S
