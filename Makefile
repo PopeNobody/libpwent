@@ -20,5 +20,7 @@ $(libdir)/libpwent.a: $(libdir)
 
 install: $(libdir)/libpwent.a
 
-Makefile.defs: Makefile.defs.in
+Makefile.defs config.h: %: %.in
+	./config.status
 
+.PHONY: all
