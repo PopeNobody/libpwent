@@ -1,4 +1,4 @@
-#include <config.h>
+#include "config.h"
 #include <sys/types.h>
 #include <pwd.h>
 #include <grp.h>
@@ -32,13 +32,18 @@ struct gai_error {
 #define ERROR(x) { x, #x }
 
 struct gai_error gai_errors[] = {
+  ERROR(EAI_FAMILY),
+#ifdef EAI_ADDRFAMILY
   ERROR(EAI_ADDRFAMILY),
+#endif
   ERROR(EAI_AGAIN),
   ERROR(EAI_BADFLAGS),
   ERROR(EAI_FAIL),
   ERROR(EAI_FAMILY),
   ERROR(EAI_MEMORY),
+#ifdef EAI_NODATA
   ERROR(EAI_NODATA),
+#endif
   ERROR(EAI_NONAME),
   ERROR(EAI_SERVICE),
   ERROR(EAI_SOCKTYPE),
