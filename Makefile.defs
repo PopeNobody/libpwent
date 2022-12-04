@@ -1,0 +1,9 @@
+prefix = /home/nn/stow/bm
+exec_prefix = ${prefix}
+bindir = ${exec_prefix}/bin
+libdir = ${exec_prefix}/lib
+srcdir = .
+
+AR = ar
+ARFLAGS = cr
+RANLIB = ranlib
