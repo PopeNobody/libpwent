@@ -5,9 +5,17 @@ AC_PREREQ([2.71])
 AC_INIT(libpwent, 0.1, libpwent@copblock.app)
 AC_CONFIG_SRCDIR([pwent.c])
 AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_MACRO_DIR([m4])
 
 # Checks for programs.
 AC_PROG_CC
+AC_PROG_INSTALL
+AC_CHECK_TOOL(AR,ar)
+dnl Set default for ARFLAGS, since autoconf does not have a macro for it.
+dnl This allows people to set it when running configure or make
+test -n "$ARFLAGS" || ARFLAGS="cr"
+AC_SUBST(ARFLAGS)
+AC_PROG_RANLIB
 
 # Checks for libraries.
 
@@ -23,5 +31,5 @@ AC_FUNC_MALLOC
 AC_FUNC_MMAP
 AC_CHECK_FUNCS([endgrent endpwent memset])
 
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile Makefile.defs])
 AC_OUTPUT
