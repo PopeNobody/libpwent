@@ -1,0 +1,27 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.71])
+AC_INIT(libpwent, 0.1, libpwent@copblock.app)
+AC_CONFIG_SRCDIR([pwent.c])
+AC_CONFIG_HEADERS([config.h])
+
+# Checks for programs.
+AC_PROG_CC
+
+# Checks for libraries.
+
+# Checks for header files.
+AC_CHECK_HEADERS([fcntl.h netdb.h sys/socket.h unistd.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_TYPE_UID_T
+AC_TYPE_SIZE_T
+
+# Checks for library functions.
+AC_FUNC_MALLOC
+AC_FUNC_MMAP
+AC_CHECK_FUNCS([endgrent endpwent memset])
+
+AC_CONFIG_FILES([Makefile])
+AC_OUTPUT
