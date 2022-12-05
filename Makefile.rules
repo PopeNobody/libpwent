@@ -14,7 +14,3 @@ ASSEMBLE.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(TARGET_MACH) -c
 %.o: %.S
 	$(ASSEMBLE.S) -o $@ $<
 
-
-#    %.i: $(srcdir)/%.c
-#    	$(PREPROCESS.c) $(OUTPUT_OPTION) $<
-
