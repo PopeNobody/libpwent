@@ -1,5 +1,6 @@
 MAKEFLAGS= -rR
 include Makefile.defs
+include Makefile.rules
 
 
 all: libpwent.a
@@ -22,6 +23,4 @@ Makefile.rules.def:
 
 
 .PHONY: all
-
-include Makefile.rules
 
