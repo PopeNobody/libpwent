@@ -1,4 +1,3 @@
-
 PREPROCESS.c = $(CC) $(CPPFLAGS) $(TARGET_MACH) -E
 
 COMPILE.c = $(CC) $(CCFLAGS) $(CPPFLAGS) $(TARGET_MACH) -S
@@ -7,8 +6,6 @@ COMPILE.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(TARGET_MACH) -S
 
 ASSEMBLE.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(TARGET_MACH) -c
 
-%.a: $(ofiles)
-	$(AR) $(ARFLAGS) $@ $<
 
 %.S: %.i
 	$(COMPILE.c) $(OUTPUT_OPTION) $<

@@ -31,5 +31,5 @@ AC_FUNC_MALLOC
 AC_FUNC_MMAP
 AC_CHECK_FUNCS([endgrent endpwent memset])
 
-AC_CONFIG_FILES([Makefile Makefile.defs])
+AC_CONFIG_FILES([Makefile.defs])
 AC_OUTPUT

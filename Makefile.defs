@@ -1,4 +1,4 @@
-prefix = /home/nn/stow/bm
+prefix = /boot/strap
 exec_prefix = ${prefix}
 bindir = ${exec_prefix}/bin
 libdir = ${exec_prefix}/lib
