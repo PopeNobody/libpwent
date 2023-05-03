@@ -2,6 +2,8 @@
 include Makefile.defs
 include Makefile.rules
 
+CFG:=../cfg/$(notdir $(PWD)).run
+$(warning CFG:=$(CFG))
 
 all: libpwent.a
 
@@ -32,13 +34,21 @@ libpwent.a: $(objs)
 	ranlib $@
 
 Makefile.defs config.h: %: %.in
-	./config.status
+	CONFIG_FILES=$@ ./config.status
+
+Makefile.defs config.h: config.status
 
 Makefile.rules.def:
 	env - make -f /dev/null /dev/null -p > $@.new
 	mv $@.new $@
 
 clean:
+	find -name '*.o' -o -name '*.i' -o -name '*.a'
 
 .PHONY: all clean install
 
+config.status: configure $(CFG)
+	bash $(CFG)
+
+configure: configure.ac
+	autoreconf
