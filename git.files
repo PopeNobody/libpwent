@@ -1,0 +1,16 @@
+.gitignore
+Makefile
+Makefile.defs
+Makefile.defs.in
+Makefile.rules
+Makefile.rules.def
+config.guess
+config.h.in
+config.sub
+configure.ac
+configure.scan
+doc/CHANGES.txt
+gitignore
+install-sh
+m4/test.m4
+pwent.c
